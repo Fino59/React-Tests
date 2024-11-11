@@ -26,6 +26,13 @@ describe('App Component', () => {
       fireEvent.click(btn);
 
       screen.getByText('New Message');
+
+      const oldMessage = screen.queryByText('Lets learn more about testing in React');
+
+      expect(oldMessage).toBeNull();
+
+      // Use NOT to change what it's expected. Work's like a !==
+      // expect(oldMessage).not.toBeInTheDocument(); 
     });
 })
 
